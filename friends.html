@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=`, initial-scale=1.0">
-    <title>Welcome to KoKoa Talk</title>
+    <title>Freinds Screen-Kokoa Clone</title>
     <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
@@ -21,17 +21,22 @@
             <i class="fa-solid fa-bolt-lightning"></i>
         </div>
     </div>
-
-    <header class="welcome-header">
-        <h1 class="welcome-header__title">Welcome to Kokoa Clone</h1>
-        <p class="welcome-header__text">If you have a Kokoa Account, log in with your email of phone number</p>
-    </header>
-    <form action="friends.html" method="get" id="login-form">
-        <input name="username" type="text" required placeholder="Email or phone number"/>
-        <input name="password" type="password" required placeholder="Password"/>
-        <input type="submit" value="Log In" />
-        <a href="#">Find Kokoa account or Password</a>
-    </form>
+    <nav class="nav">
+        <ul class="nav__list">
+            <li class="nav__btn">
+                <a class="nav__link" href="friends.html"><i class="fa-solid fa-user fa-2x"></i></a>
+            </li>
+            <li class="nav__btn">
+                <a class="nav__link" href="#"><i class="fa-regular fa-comment fa-2x"></i></a>
+            </li>
+            <li class="nav__btn">
+                <a class="nav__link" href="#"><i class="fa-brands fa-sistrix fa-2x"></i></a>
+            </li>
+            <li class="nav__btn">
+                <a class="nav__link" href="#"><i class="fa-solid fa-ellipsis fa-2x"></i></a>
+            </li>
+        </ul>
+    </nav>
     <script src="https://kit.fontawesome.com/6b65280b65.js" crossorigin="anonymous"></script>
 </body>
 </html>
