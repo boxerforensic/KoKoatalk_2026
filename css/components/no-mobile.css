@@ -11,7 +11,7 @@
     top: 0;
 }
 
-@media screen and (max-width:845px) { /*최대 크기가 645가 되지 전까지는 허용범위 안에 있으므로 true 이를 넘어서면 false*/
+@media screen and (max-width:645px) { /*최대 크기가 645가 되지 전까지는 허용범위 안에 있으므로 true 이를 넘어서면 false*/
     #no-mobile {
         display:none;
     }
