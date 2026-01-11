@@ -1,0 +1,195 @@
+#chat-screen {
+    background-color: #abc1d1;
+    height: 500vh;
+}
+
+#chat-screen .status-bar,
+#chat-screen .alt-header {
+    top:0;
+    position:fixed;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #abc1d1;
+}
+
+#chat-screen .alt-header {
+    top: 15px;
+}
+
+#chat-screen .status-bar{
+    z-index: 2;
+} /*main-chat이 맨 나중에 있고, fixed가 아니므로, fixed중에서 순위를 정해야 해서 z-index옵션으로 layer를 줌*/ 
+
+
+@keyframes fadeIn {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to {
+        transform: none;
+        opacity: 1;
+    }
+}
+
+.main-chat {
+    margin-top: 150px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeIn 0.8s linear;
+}
+
+.chat__timestamp {
+    color: white;
+    background-color: #92a4b2;
+    font-size: 14px;
+    padding: 10px 15px;
+    border-radius: 25px;
+    margin-bottom: 25px;
+
+}
+
+/* Massage-row */
+.message-row{
+    width: 100%;
+    display:flex;
+    margin-bottom: 25px;
+}
+
+.message-row img{
+    width: 50px;
+    height: 50px;
+    border-radius:40%;
+    margin-right: 15px;
+}
+
+.message__author {
+    opacity: 0.6;
+    margin-bottom: 5px;
+    display:block;
+}
+
+.message__info {
+    margin-top:7px;
+    display:flex;
+    align-items: flex-end;
+    /* 전체적으로 아래로 정렬시키기 위해 align-items: flex-end를 사용하였음. */
+}
+
+.message__bubble {
+    padding: 12px 15px;
+    background-color: white;
+    font-size: 20px;
+    border-radius: 15px;
+    border-top-left-radius:0px;
+    font-weight: 600;
+}
+.message__time {
+    font-size: 13px;
+    opacity: 0.7;
+    margin-left: 5px;
+}
+
+/* 받은 메시지 */
+.message-row__own {
+    justify-content: flex-end;
+}
+
+.message-row__own .message__bubble { /*.message-row__own을 하나 따로 넣어줘서 속해있는 태그들에게 완전히 다른 속성을 줄수있다. */
+    /* css는 위에서 아래로 속성이 주어지기 때문에 나중에 선언된것이 우선 순위를 갖는다. */
+    background-color: var(--yellow);
+    border-radius: 15px;
+    border-top-right-radius: 0px;
+    font-weight: 300;
+    margin-left: 5px;
+}
+/* 
+.message-row__own .message__bubble {
+    order: 1;
+}
+
+.message-row__own .message__time {
+    order: 0; /* order를 바꾸어서 작은 숫자가 더 빠른 번호다.
+} */
+
+.message-row__own .message__info {
+    flex-direction: row-reverse; /* flex가 되어 있는 컬럼에 row-reverse옵션으로 좌우를 바꿀 수 있다.*/
+}
+
+.reply {
+    position:fixed;
+    bottom: 0px;
+    width:100%;
+    background-color: white;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 20px;
+    box-sizing: border-box;
+    transition: all .3s ease-in-out;
+}
+
+.reply .reply__column:first-child {
+    width: 10%;
+    opacity: 0.5;
+}
+.reply .reply__column:last-child {
+    width: 90%;
+    position: relative;
+}
+
+
+.reply input {
+    height: 30px;
+    width: 100%; /*부모인 reply__column이 폭을 갖지 못해서 100%를 쓸수 없었는데, width를 주어서 사용가능함.*/
+    border-radius: 25px;
+    border: var(--main-border);
+    box-sizing: border-box;
+    transition: all .3s ease-in-out;
+
+
+}
+
+.reply__column:last-child > i,
+.reply__column:last-child button {
+    position: absolute;
+    right: -3px;
+    top: 3px;
+}
+
+.reply__column:last-child > i {  /*그냥 i태그를 선택하면 하위의 두개가 다 포함이 됨. >바로 하위 자식을 선택하기 위함.*/
+    font-size:26px;
+    right: 40px;
+    top: 5  px;
+    opacity: 0.5;
+}
+
+.reply__column button {
+    background-color: var(--yellow);
+    border: none;
+    width:28px;
+    height: 28px;
+    border-radius: 50%;
+}
+.reply .reply__column:first-child, /*.reply쪽에서 opacity가 변화(transform)하는 것을 스무스하게 바뀌도록 함*/
+.reply .fa-face-smile,
+.reply button {
+    transition:opacity 0.3s ease-in-out;
+}
+
+
+.reply:focus-within .reply__column:first-child,
+.reply:focus-within .fa-face-smile,
+.reply:focus-within button {
+    opacity: 0;
+}
+
+.reply:focus-within input{
+    width:98vw;
+    transform: translateX(-12%) translateY(-80px);
+}
+
+.reply:focus-within {
+    transform: translateY(80px);
+}

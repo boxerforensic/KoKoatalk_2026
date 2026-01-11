@@ -16,7 +16,7 @@
 
 .friends-screen__channel{
     margin-top: 25px;
-    border-top: 1px solid rgba(0,0,0,0.2);
+    border-top: var(--main-border);
     padding-top:15px;
     color:rgba(0,0,0,0.5);
     
@@ -28,6 +28,27 @@
     justify-content:space-between;
 }
 
-.user-component_time {
+@keyframes hideSplashScreen {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        visibility:hidden; /*전체를 가려진다 하더라도 뒤의 화면을 사용할 수 있음. */
+    }
+}
 
+#splash-screen {
+    background-color: var(--yellow);
+    position: absolute;
+    height:100vh;
+    width: 100vw;
+    top:0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 132px;
+    animation: hideSplashScreen 0.4s ease-in-out forwards; /* forwards는 keyframe의 마지막 속성을 가지고 있을 수 있게 만들어준다.*/
+    animation-delay: 2s;
+  
 }

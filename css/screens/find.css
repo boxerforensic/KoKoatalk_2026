@@ -1,0 +1,134 @@
+.recommended-friends {
+
+    padding: 20px;
+    border-top: var(--main-border);
+    border-bottom: var(--main-border);
+}
+.recommended-friends__title {
+    font-size: 18px;
+    font-weight: bold;;
+    color: var(--font-color__grey);
+}
+
+.recommended-friends span {
+    margin: 110px 0;
+    text-align: center;
+    justify-self: center;
+    display: flex;
+    font-size: 20px;
+    font-weight: bold;
+    opacity: 0.4;
+}
+
+.open-chat__header {
+    padding: 15px;
+    display:flex;
+    justify-content: space-between;
+}
+
+.open-chat__header h4{
+    font-weight: bold;
+    opacity: 0.6;
+}
+
+.open-chat__header span{
+    font-weight: bold;
+    opacity: 0.4;
+}
+
+.open-chat__header span i{
+    margin-left: 5px;
+}
+
+.open-post {
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+    padding-bottom: 20px;
+    border-bottom: var(--main-border);
+}
+
+.open-post__title {
+    font-weight: bold;
+    font-size:20px;
+    margin-bottom:12px;
+}
+.open-post__hashtag {
+    opacity: 0.4;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 3px;
+}
+
+.open-post__members {
+    display:flex;
+    align-items:center;
+    margin-top: 12px;
+}
+.open-post__members img{
+    width: 20px;
+    height:20px;
+    border-radius:50%;
+    margin-right: 5px;
+}
+
+.open-post__member-count{
+    opacity: 0.5;
+    font-size: 16px;
+}
+
+.open-post__member-divider {
+    width: 2px;
+    height: 14px;
+    background-color: rgba(0,0,0,0.3);
+    margin: 0px 5px;
+}
+
+.open-post__member-status {
+    color:#ff6bc6;
+}
+
+.open-post__photo {
+    position: relative;
+}
+
+.open-post__photo img {
+    width:120px;
+    height:120px;
+    border-radius: 10px;
+}
+
+.open-post__heart-count {
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    border-radius: 15px;
+    position: absolute;
+    bottom: 7px;
+    right: 7px;
+    font-size: 14px;
+}
+
+.open-post__heart-count span{
+    margin-left: 5px;
+}
+
+@keyframes heartBeat {
+    0% {
+        transform: none;
+    }
+    50% {
+        transform: scale(1.3);
+        color:red;
+    }
+    100% {
+        transform: none;
+    }
+}
+
+.open-post__heart-count:hover i { /*heart-count쪽에 어느곳이던지 마우스가 정박하면 i의 아이콘이 뛰게 만드는 것.*/
+    will-change: transform; /*미리 브라우저에게 속성이 변한다고 하여 흔들림등을 방지*/
+    animation:heartBeat 1s linear infinite;
+}

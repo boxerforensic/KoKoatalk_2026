@@ -1,0 +1,18 @@
+#no-mobile {
+    position: absolute;
+    z-index: 99;
+    height:100vh;
+    width: 100vw;
+    background-color: var(--yellow);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    top: 0;
+}
+
+@media screen and (max-width:845px) { /*최대 크기가 645가 되지 전까지는 허용범위 안에 있으므로 true 이를 넘어서면 false*/
+    #no-mobile {
+        display:none;
+    }
+}
